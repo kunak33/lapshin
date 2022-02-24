@@ -55,3 +55,15 @@
     pip:
      name: docker
 
+  - name: mkdir
+    file:
+     path: /skillcloud-nginx
+     state: directory
+     mode: '755'
+
+  
+  - name: copy files to skillcloud
+    copy:
+     src: Project_Deployer/{{ item }}
+     dest: /skillcloud-nginx/{{ item }}
+    loop: [ 'index.html', 'nginx.conf']
