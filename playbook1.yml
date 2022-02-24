@@ -68,10 +68,6 @@
      dest: /skillcloud-nginx/{{ item }}
     loop: [ 'index.html', 'nginx.conf', 'docker-compose.sh', 'docker-compose.yml']
  
-  - name: Restard ssh and UFW
-    systemd:
-     state: restarted
-     name: ssh
- 
+
   - name: Reboot
     reboot:
