@@ -1,3 +1,4 @@
+
 ---
 - name: apt update and install curl
   hosts: Project1
@@ -21,4 +22,14 @@
      dest: "/etc/ssh/sshd_config"
      regexp: "^Port"
      line: "Port 1834"
-      
+
+  - name: user add
+    user:
+     name: "{{ item.name }}"        
+     password: "{{ item.password }}"
+
+    with_items:
+     - { name: Webdeveloper, password: S52we9V6QTp76 }
+     - { name: Devopsengineer, password: dHy6sKGHsj2T }
+     - { name: Projectmanager, password: oP92ugMSaCbe }
+
