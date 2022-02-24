@@ -1,0 +1,24 @@
+---
+- name: apt update and install curl
+  hosts: Project1
+  become: yes 
+  tasks:
+  - name: update
+    apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+  - name: install curl
+    apt: name=curl state=latest
+ 
+  - name: Enable UFW and allow ports TCP 80,8080,1834 
+    ufw:
+     state: enabled
+     rule: allow
+     port: 80,8080,1834
+     proto: tcp
+
+  - name: Change ssh port and PasswordAuthen=1
+    lineinfile:
+     dest: "/etc/ssh/sshd_config"
+     regexp: "^Port"
+     line: "Port 1834"
+      
