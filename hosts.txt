@@ -1,5 +1,5 @@
 [STANDING_SERVERS]
-Project1	ansible_host=10.0.101.226 owner=root ansible_password=toortoor
-Project2	ansible_host=10.0.101.227 owner=root ansible_password=toortoor
-Project3	ansible_host=10.0.101.228 owner=root ansible_password=toortoor
+Project1	ansible_host=10.0.101.226 owner=root ansible_password=toortoor 
+Project2	ansible_host=10.0.101.227 owner=root ansible_password=toortoor 
+Project3	ansible_host=10.0.101.228 owner=root ansible_password=toortoor 
 
